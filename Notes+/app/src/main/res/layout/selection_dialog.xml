@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_back"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:text="Select way"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dim_10_dp"
+        android:background="@drawable/dialog_header_back"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/txtCamera"
+        android:layout_below="@+id/txtHeader"
+        android:text="Camera"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dim_10_dp"
+        android:textColor="@color/textColor"/>
+
+
+    <TextView
+        android:id="@+id/txtGallery"
+        android:layout_below="@+id/txtCamera"
+        android:text="Gallery"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dim_10_dp"
+        android:textColor="@color/textColor"/>
+
+</RelativeLayout>
