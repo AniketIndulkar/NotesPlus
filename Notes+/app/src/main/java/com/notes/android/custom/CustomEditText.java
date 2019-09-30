@@ -10,7 +10,7 @@ import java.util.Stack;
  * Created by Aniket on 27-03-2018.
  */
 
-public class CustomEditText extends android.support.v7.widget.AppCompatEditText {
+public class CustomEditText extends androidx.appcompat.widget.AppCompatEditText {
 
     private Context mContext;
     private Stack<Character> undoStack = new Stack<>();
