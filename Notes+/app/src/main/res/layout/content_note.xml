@@ -89,7 +89,7 @@
                 android:paddingLeft="@dimen/dim_17_dp"
                 android:paddingRight="@dimen/dim_17_dp"
                 android:paddingTop="@dimen/dim_10_dp"
-                android:inputType="textCapSentences"
+                android:inputType="textMultiLine|textCapSentences"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/dim_16_sp" />
 
