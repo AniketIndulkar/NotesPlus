@@ -80,19 +80,12 @@ public class HomeActivity extends NotesActivity implements HomeView, NoteRVAdapt
     }
 
     private void loadAds() {
-        //To load Ads
-        if (Utils.isNetworkConnected(HomeActivity.this) && Utils.isConnected()) {//to check internet connectivity
+        if (Utils.isNetworkConnected(HomeActivity.this) && Utils.isConnected()) {
             didAdLoad = true;//to indicate ad loaded
-
-            //Initialize Admob sdk
             MobileAds.initialize(this, "ca-app-pub-4397804709549987~1961712358");
-
-            //To load banner ads
             mAdView = (AdView) findViewById(R.id.adView);
             final AdRequest adRequest = new AdRequest.Builder()
                     .build();
-
-//            To load interstitial ads
             mInterstitialAd = new InterstitialAd(this);
             mInterstitialAd.setAdUnitId("ca-app-pub-4397804709549987/4217174754");
             mInterstitialAd.setAdListener(new AdListener() {

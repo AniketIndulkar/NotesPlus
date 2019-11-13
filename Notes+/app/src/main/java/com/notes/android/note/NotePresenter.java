@@ -12,8 +12,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -24,6 +22,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.itextpdf.text.Chapter;
 import com.itextpdf.text.Chunk;
@@ -94,8 +95,7 @@ public class NotePresenter {
 
 
     public void getNoteDate() {
-        Calendar calendar = Calendar.getInstance();
-        noteDate = calendar.getTime();
+        noteDate = new Date(noteData.getCreatedAt());
         noteView.setDate(noteDate.getDate() + " " + getMonthName(noteDate.getMonth()));
     }
 
@@ -368,7 +368,7 @@ public class NotePresenter {
     }
 
     public void deleteNote(Context mContext, NoteModel noteData) {
-        if (mContext != null) {
+        if (mContext != null && noteData != null) {
             AppDb.getAppDatabase(mContext).todoDao().deleteAll(noteData.getNoteId());
             AppDb.getAppDatabase(mContext).notesDao().delete(noteData);
         } else {

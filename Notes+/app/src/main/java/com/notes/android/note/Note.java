@@ -97,12 +97,12 @@ public class Note extends AppCompatActivity implements NoteView, View.OnClickLis
         getIntentData();
         setListners();
         presenter = new NotePresenter(this);
-        presenter.getNoteDate();
 
         if (noteId != 0) {
             isUpdate = true;
             noteData = AppDb.getAppDatabase(Note.this).notesDao().findById(noteId);
             setPrevieousData();
+            presenter.getNoteDate();
         } else {
             isUpdate = false;
         }
